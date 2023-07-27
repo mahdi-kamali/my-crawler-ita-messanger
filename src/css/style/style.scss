@@ -16,9 +16,6 @@ $warning: #ffc107;
     height: 100%;
     min-height: 100vh;
 
-   
-  
-
     .enter-number-form {
         display: flex;
         flex-direction: column;
@@ -88,6 +85,9 @@ $warning: #ffc107;
         display: flex;
         align-items: center;
         padding: 2em;
+        opacity: 0;
+        pointer-events: none;
+        height: 0;
         .left {
             display: flex;
             flex-direction: column;
