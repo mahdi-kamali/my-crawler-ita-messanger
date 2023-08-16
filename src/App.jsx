@@ -5,6 +5,15 @@ import "../src/css/style/style.css"
 
 
 
+
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import LoginPage from './jsx/pages/auth-pages/LoginPage';
 import MainPage from "./jsx/pages/main=page/MainPage";

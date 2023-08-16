@@ -17,6 +17,7 @@ header {
   left: 0;
   top: 0;
   right: 0;
+  z-index: 2;
 }
 header .right {
   color: white;
@@ -308,6 +309,198 @@ main {
 }
 .main-page .complex-search .search-form .form-submit button svg {
   font-size: 1.2rem;
+}
+.main-page .complex-search .form-results {
+  margin-top: 1rem;
+}
+.main-page .complex-search .list-container {
+  display: grid;
+  flex-direction: column;
+  gap: 1em;
+}
+.main-page .complex-search .list-container .swiper-controlls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 0.5rem;
+  padding: 2em;
+  padding-bottom: 0;
+}
+.main-page .complex-search .list-container .swiper-controlls .swiper-bullets {
+  width: -moz-max-content;
+  width: max-content;
+  direction: rtl;
+}
+.main-page .complex-search .list-container .swiper-controlls .arrow {
+  display: flex;
+  color: #ef7b00;
+  font-size: 2rem;
+  transition: all 1s ease;
+  scale: 1.2;
+  rotate: 180deg;
+}
+.main-page .complex-search .list-container .swiper-controlls .false {
+  opacity: 0.5;
+  scale: 0.9;
+}
+.main-page .complex-search .list-container h1 {
+  text-align: end;
+  padding: 1em;
+}
+.main-page .complex-search .list-container .item {
+  transition: all 1s ease;
+  padding: 1em 0;
+  padding-bottom: 0;
+  direction: ltr;
+}
+.main-page .complex-search .contacts .item {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 1rem;
+  transition: all 1s ease;
+}
+.main-page .complex-search .contacts .item .item-header img {
+  width: 5rem;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100rem;
+  border: 3px dashed #ff5252;
+  padding: 0.25em;
+}
+.main-page .complex-search .contacts .item .item-body {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.main-page .complex-search .contacts .item .item-body .name {
+  font-weight: bold;
+}
+.main-page .complex-search .contacts .item .item-body .id {
+  margin-top: 0.5rem;
+}
+.main-page .complex-search .contacts .item .item-body .view-info {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5em 1em;
+  padding-top: 0.75em;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.main-page .complex-search .groups .item {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 1rem;
+  transition: all 1s ease;
+}
+.main-page .complex-search .groups .item .item-header img {
+  width: 5rem;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100rem;
+  border: 3px dashed #ff5252;
+  padding: 0.25em;
+}
+.main-page .complex-search .groups .item .item-body {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.main-page .complex-search .groups .item .item-body .name {
+  font-weight: bold;
+}
+.main-page .complex-search .groups .item .item-body .id {
+  margin-top: 0.5rem;
+}
+.main-page .complex-search .groups .item .item-body .view-info {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5em 1em;
+  padding-top: 0.75em;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.main-page .complex-search .groups .item .item-body .bio {
+  direction: rtl;
+  font-size: 0.75rem;
+  opacity: 0.75;
+  line-height: 1.5;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.main-page .complex-search .channels .item {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 1rem;
+  transition: all 1s ease;
+}
+.main-page .complex-search .channels .item .item-header img {
+  width: 5rem;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100rem;
+  border: 3px dashed #ff5252;
+  padding: 0.25em;
+}
+.main-page .complex-search .channels .item .item-body {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.main-page .complex-search .channels .item .item-body .name {
+  font-weight: bold;
+}
+.main-page .complex-search .channels .item .item-body .id {
+  margin-top: 0.5rem;
+}
+.main-page .complex-search .channels .item .item-body .members {
+  margin-top: 0.5rem;
+  direction: rtl;
+}
+.main-page .complex-search .channels .item .item-body .view-info {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5em 1em;
+  padding-top: 0.75em;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.main-page .complex-search .channels .item .item-body .bio {
+  direction: rtl;
+  font-size: 0.75rem;
+  opacity: 0.75;
+  line-height: 1.5;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.main-page .complex-search .hash-tag .item {
+  background-color: #1976d2;
+  color: white;
+  padding: 0;
+  text-align: center;
+  padding: 0.5em;
+  border-radius: 0.25rem;
+  cursor: pointer;
 }
 
 .fade-out {
