@@ -8,6 +8,74 @@ $info: #2196f3;
 $success: #4caf50;
 $warning: #ffc107;
 
+$primary-color-1: #dbe0e5;
+$primary-color-2: #373b42;
+$primary-color-3: #373b42;
+$primary-color-4: #f39571;
+$primary-color-5: #009da4;
+
+.App {
+    position: relative;
+    background-color: $primary-color-1;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: $primary-color-2;
+    padding: 1em 2em;
+    align-items: center;
+    // border-radius: 0 0 3rem 3rem;
+    position: sticky;
+    left: 0;
+    top: 0;
+    right: 0;
+    .right {
+        color: white;
+        .user {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            img {
+                width: 4.5rem;
+                aspect-ratio: 1/1;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 4px solid white;
+            }
+            .info {
+                display: flex;
+                align-items: end;
+                flex-direction: column;
+                gap: 0.5rem;
+                h1 {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+    .mid {
+    }
+    .left {
+        .log-out {
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+                background-color: white;
+                padding: 0.5em 2em;
+                border-radius: 100rem;
+            }
+        }
+    }
+}
+main {
+    min-height: 100dvh;
+}
+
 .login-page {
     display: flex;
     flex-direction: column;
@@ -137,6 +205,41 @@ $warning: #ffc107;
         }
         .right {
         }
+    }
+}
+.main-page {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    aside {
+        background-color: $primary-color-2;
+        padding: 2em 0;
+        color: white;
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            li {
+                cursor: pointer;
+                display: flex;
+                width: 20ch;
+                align-items: center;
+                justify-content: end;
+                padding: 1em 2em;
+                gap: 0.5rem;
+                transition: all 1s ease;
+                &:hover {
+                    background-color: white;
+                    color: $primary-color-2;
+                }
+            }
+            .true {
+                background-color: white;
+                color: $primary-color-2;
+            }
+        }
+    }
+    .content {
+        padding: 2em;
     }
 }
 

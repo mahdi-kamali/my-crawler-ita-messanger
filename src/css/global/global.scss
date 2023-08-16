@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    list-style-type: none;
     &::after,
     &::before {
         box-sizing: inherit;
@@ -28,7 +29,9 @@ html {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    line-height: 1;
 }
+
 
 input {
     direction: rtl;

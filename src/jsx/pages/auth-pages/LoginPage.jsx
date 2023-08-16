@@ -106,6 +106,7 @@ const LoginPage = () => {
                     <div className="form-buttons">
                         <button
                             className='back'
+                            type='button'
                             onClick={handleBackClick}>
                             <span>بازگشت</span>
                             <Icon icon="pajamas:go-back" />
