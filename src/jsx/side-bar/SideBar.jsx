@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react"
 import { useMemo, useState } from "react"
 import ComplexSearch from "../pages/main=page/components/ComplexSearch"
 import Contacts from "../pages/main=page/components/Contacts"
+import Channels from "../pages/main=page/components/Channels"
 
 const SideBar = ({ setContent }) => {
 
@@ -20,7 +21,8 @@ const SideBar = ({ setContent }) => {
         },
         {
             svg: <Icon icon="uil:channel" />,
-            title: "کانال ها"
+            title: "کانال ها",
+            component : <Channels/>
         },
         {
             svg: <Icon icon="dashicons:groups" />,

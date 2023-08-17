@@ -189,11 +189,14 @@ main {
   background-color: #373b42;
   padding: 2em 0;
   color: white;
+  top: 2rem;
 }
 .main-page aside ul {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  position: sticky;
+  top: 9rem;
 }
 .main-page aside ul li {
   cursor: pointer;
@@ -502,6 +505,9 @@ main {
   border-radius: 0.25rem;
   cursor: pointer;
 }
+.main-page .item {
+  box-shadow: 0.3rem 0.3rem 0.5rem 0rem rgba(0, 0, 0, 0.1);
+}
 .main-page .contacts-tab {
   padding: 2em;
   display: flex;
@@ -637,10 +643,157 @@ main {
   background-color: #4caf50;
   color: white;
   padding: 0.6em 1em;
+  padding-bottom: 0.4em;
   border-radius: 100rem;
 }
 .main-page .contacts-tab .search-results .item .item-buttons .success svg {
   font-size: 0.9rem;
+}
+.main-page .channels-tab {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.main-page .channels-tab .search-box {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em 1em;
+  gap: 0.5rem;
+  border-radius: 100rem;
+}
+.main-page .channels-tab .search-box input {
+  all: unset;
+}
+.main-page .channels-tab .search-categories {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+.main-page .channels-tab .search-categories .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 7ch;
+  padding: 0.75em 1em;
+  background-color: white;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  transition: all 1s ease;
+  cursor: pointer;
+}
+.main-page .channels-tab .search-categories .item:hover {
+  background-color: #ef7b00;
+  color: white;
+}
+.main-page .channels-tab .search-categories .true {
+  background-color: #ef7b00;
+  color: white;
+}
+.main-page .channels-tab .search-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  width: 100%;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.main-page .channels-tab .search-results .item {
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transition: all 1s ease;
+  position: relative;
+}
+.main-page .channels-tab .search-results .item .item-header {
+  display: flex;
+  width: 100%;
+}
+.main-page .channels-tab .search-results .item .item-header img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main-page .channels-tab .search-results .item .item-body {
+  direction: rtl;
+  padding: 2em;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+.main-page .channels-tab .search-results .item .item-body .row {
+  font-size: 0.9rem;
+}
+.main-page .channels-tab .search-results .item .item-body .name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+.main-page .channels-tab .search-results .item .item-body .link {
+  direction: ltr;
+  margin-top: 0.25rem;
+}
+.main-page .channels-tab .search-results .item .item-body .members-count {
+  margin-top: 0.5rem;
+}
+.main-page .channels-tab .search-results .item .item-body .bio {
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+.main-page .channels-tab .search-results .item .item-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  bottom: 0;
+  transition: all 1s ease;
+  margin-top: 1rem;
+}
+.main-page .channels-tab .search-results .item .item-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+.main-page .channels-tab .search-results .item .item-buttons button svg {
+  font-size: 1.2rem;
+}
+.main-page .channels-tab .search-results .item .item-buttons .success {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5em 1.25em;
+  padding-bottom: 0.4em;
+  border-radius: 100rem;
+}
+.main-page .channels-tab .search-results .item .item-buttons .share,
+.main-page .channels-tab .search-results .item .item-buttons .like {
+  background-color: white;
+  padding: 0.5em;
+  border-radius: 50%;
+}
+.main-page .channels-tab .search-results .item:hover {
+  grid-template-columns: 3fr 1fr;
 }
 
 .fade-out {
