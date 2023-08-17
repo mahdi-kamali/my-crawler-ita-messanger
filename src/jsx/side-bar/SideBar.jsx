@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react"
 import { useMemo, useState } from "react"
 import ComplexSearch from "../pages/main=page/components/ComplexSearch"
+import Contacts from "../pages/main=page/components/Contacts"
 
 const SideBar = ({ setContent }) => {
 
@@ -14,6 +15,7 @@ const SideBar = ({ setContent }) => {
         {
             svg: <Icon icon="fluent:book-contacts-24-filled" />,
             title: "مخاطبان",
+            component: <Contacts />
 
         },
         {

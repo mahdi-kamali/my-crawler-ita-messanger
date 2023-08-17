@@ -23,7 +23,7 @@ const ComplexSearch = () => {
     ]
 
 
-    const contatcsResults = [
+    const fakeContacts = [
         {
             name: "سارا احمدی",
             id: "@sara_ahmadi",
@@ -121,7 +121,7 @@ const ComplexSearch = () => {
 
 
     return (
-        <div className='complex-search'>
+        <div className='complex-search-tab'>
 
             <form action="#" className='search-form'>
                 <div className="search-box">
@@ -200,7 +200,7 @@ const ComplexSearch = () => {
                         }
 
                     >
-                        {contatcsResults.map((item, index) => {
+                        {fakeContacts.map((item, index) => {
                             return <SwiperSlide className='item'>
                                 <div className="item-header">
                                     <img src={item.image} />
