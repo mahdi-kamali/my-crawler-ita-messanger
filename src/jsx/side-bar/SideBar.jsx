@@ -3,6 +3,12 @@ import { useMemo, useState } from "react"
 import ComplexSearch from "../pages/main=page/components/ComplexSearch"
 import Contacts from "../pages/main=page/components/Contacts"
 import Channels from "../pages/main=page/components/Channels"
+import Groups from "../pages/main=page/components/Groups"
+import Notification from "../pages/main=page/components/Notification"
+import CreateNotification from "../pages/main=page/components/CreateNotification"
+import NormalItem from "./components/NormalItem"
+import NestedItem from "./components/NestedItem"
+import Files from "../pages/main=page/components/Files"
 
 const SideBar = ({ setContent }) => {
 
@@ -11,42 +17,66 @@ const SideBar = ({ setContent }) => {
         {
             svg: <Icon icon="iconamoon:search-light" />,
             title: "جستجوی پیشرفته",
-            component: <ComplexSearch />
+            component: <ComplexSearch />,
+            type: "normal"
         },
         {
             svg: <Icon icon="fluent:book-contacts-24-filled" />,
             title: "مخاطبان",
-            component: <Contacts />
+            component: <Contacts />,
+            type: "normal"
+
 
         },
         {
             svg: <Icon icon="uil:channel" />,
             title: "کانال ها",
-            component : <Channels/>
+            component: <Channels />,
+            type: "normal"
         },
         {
             svg: <Icon icon="dashicons:groups" />,
-            title: "گروه ها"
+            title: "گروه ها",
+            component: <Groups />,
+            type: "normal"
         },
         {
             svg: <Icon icon="basil:notification-on-solid" />,
-            title: "اعلانات"
+            title: "اعلانات",
+            type: "nested",
+            childs: [
+                {
+                    svg: <Icon icon="bxs:category-alt" />,
+                    title: "همه ی اعلانات",
+                    component: <Notification />
+                },
+                {
+                    svg: <Icon icon="gridicons:create" />,
+                    title: "ایجاد اعلانات",
+                    component: <CreateNotification />
+                }
+            ]
         },
         {
             svg: <Icon icon="ph:files-fill" />,
-            title: "فایل ها"
+            title: "فایل ها",
+            type: "normal" , 
+            component : <Files/>
         },
         {
             svg: <Icon icon="bxs:download" />,
-            title: "دانلود ها"
+            title: "دانلود ها",
+            type: "normal"
         },
         {
             svg: <Icon icon="fluent:settings-20-filled" />,
-            title: "تنظیمات"
+            title: "تنظیمات",
+            type: "normal"
         },
         {
             svg: <Icon icon="mdi:account-cog" />,
-            title: "اطلاعات کاربری"
+            title: "اطلاعات کاربری",
+            type: "normal"
         },
 
     ]
@@ -64,18 +94,28 @@ const SideBar = ({ setContent }) => {
             <ul>
                 {
                     listItems.map((item, index) => {
-                        return <li
-                            className={` ${item.title === selected.title}`}
-                            key={index}
-                            onClick={() => { setSelected(item) }}
-                        >
-                            <span>
-                                {item.title}
-                            </span>
-                            {item.svg}
-                        </li>
+
+                        {
+                            if (item.type === "normal") {
+                                return <NormalItem
+                                    item={item}
+                                    selected={selected}
+                                    setSelected={setSelected}
+                                    key={index} />
+                            }
+                            else {
+                                return <NestedItem
+                                    item={item}
+                                    selected={selected}
+                                    setSelected={setSelected}
+                                    key={index} />
+                            }
+                        }
+
                     })
                 }
+
+
             </ul>
         </aside>
     )

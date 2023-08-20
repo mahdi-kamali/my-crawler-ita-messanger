@@ -14,7 +14,7 @@ const Header = () => {
             </div>
             <div className="mid"></div>
             <div className="right">
-                <div className="user">
+                <div className="header-user">
                     <div className="info">
                         <h1>نام کاربر</h1>
                         <small>کاربر عادی</small>

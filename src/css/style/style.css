@@ -22,13 +22,13 @@ header {
 header .right {
   color: white;
 }
-header .right .user {
+header .right .header-user {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 }
-header .right .user img {
+header .right .header-user img {
   width: 4.5rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
@@ -36,13 +36,13 @@ header .right .user img {
      object-fit: cover;
   border: 4px solid white;
 }
-header .right .user .info {
+header .right .header-user .info {
   display: flex;
   align-items: end;
   flex-direction: column;
   gap: 0.5rem;
 }
-header .right .user .info h1 {
+header .right .header-user .info h1 {
   font-size: 1.5rem;
 }
 header .left .log-out button {
@@ -57,6 +57,327 @@ header .left .log-out button {
 
 main {
   min-height: 100dvh;
+}
+
+.user-item {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: white;
+  transition: all 1s ease;
+}
+.user-item .user-header {
+  position: relative;
+}
+.user-item .user-header img {
+  width: 100%;
+  aspect-ratio: 16/12;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.user-item .user-header .name {
+  position: absolute;
+  bottom: 0;
+  background-color: white;
+  color: #373b42;
+  padding: 0.5em 1em;
+  right: 0;
+  border-radius: 0.75rem 0 0 0;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.user-item .user-body {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  text-align: right;
+  padding: 1.25em 1em;
+  gap: 0.5rem;
+}
+.user-item .user-body .property {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  align-items: center;
+}
+.user-item .user-body .property svg {
+  font-size: 1rem;
+}
+.user-item .user-body .property p {
+  direction: rtl;
+}
+.user-item .user-body .id span {
+  direction: ltr;
+}
+.user-item .user-body .bio {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  opacity: 0.8;
+}
+.user-item .user-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  border-bottom: 4px solid #373b42;
+  padding: 0 1em;
+  padding-bottom: 1em;
+  gap: 0.5rem;
+}
+.user-item .user-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.user-item .user-buttons button svg {
+  font-size: 1.25rem;
+}
+.user-item .user-buttons .success {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.6em 1em;
+  padding-bottom: 0.4em;
+  border-radius: 100rem;
+}
+.user-item .user-buttons .success svg {
+  font-size: 0.9rem;
+}
+
+.channel-item {
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transition: all 1s ease;
+  position: relative;
+}
+.channel-item .item-header {
+  display: flex;
+  width: 100%;
+}
+.channel-item .item-header img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.channel-item .item-body {
+  direction: rtl;
+  padding: 2em;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+.channel-item .item-body .row {
+  font-size: 0.9rem;
+}
+.channel-item .item-body .name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+.channel-item .item-body .link {
+  direction: ltr;
+  margin-top: 0.25rem;
+}
+.channel-item .item-body .members-count {
+  margin-top: 0.5rem;
+}
+.channel-item .item-body .bio {
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+.channel-item .item-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  bottom: 0;
+  transition: all 1s ease;
+  margin-top: 1rem;
+}
+.channel-item .item-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+.channel-item .item-buttons button svg {
+  font-size: 1.2rem;
+}
+.channel-item .item-buttons .success {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5em 1.25em;
+  padding-bottom: 0.4em;
+  border-radius: 100rem;
+}
+.channel-item .item-buttons .share,
+.channel-item .item-buttons .like {
+  background-color: white;
+  padding: 0.5em;
+  border-radius: 50%;
+}
+.channel-item:hover {
+  grid-template-columns: 3fr 1fr;
+}
+
+.group-item {
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transition: all 1s ease;
+  position: relative;
+}
+.group-item .item-header {
+  display: flex;
+  width: 100%;
+}
+.group-item .item-header img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.group-item .item-body {
+  direction: rtl;
+  padding: 2em;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+.group-item .item-body .row {
+  font-size: 0.9rem;
+}
+.group-item .item-body .name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+.group-item .item-body .link {
+  direction: ltr;
+  margin-top: 0.25rem;
+}
+.group-item .item-body .members-count {
+  margin-top: 0.5rem;
+}
+.group-item .item-body .bio {
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+.group-item .item-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  bottom: 0;
+  transition: all 1s ease;
+  margin-top: 1rem;
+}
+.group-item .item-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+.group-item .item-buttons button svg {
+  font-size: 1.2rem;
+}
+.group-item .item-buttons .success {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5em 1.25em;
+  padding-bottom: 0.4em;
+  border-radius: 100rem;
+}
+.group-item .item-buttons .share,
+.group-item .item-buttons .like {
+  background-color: white;
+  padding: 0.5em;
+  border-radius: 50%;
+}
+.group-item:hover {
+  grid-template-columns: 3fr 1fr;
+}
+
+.search-box {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em 1em;
+  gap: 0.5rem;
+  border-radius: 100rem;
+}
+.search-box input {
+  all: unset;
+}
+
+.search-categories {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+.search-categories .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 7ch;
+  padding: 0.75em 1em;
+  background-color: white;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  transition: all 1s ease;
+  cursor: pointer;
+}
+.search-categories .item:hover {
+  background-color: #ef7b00;
+  color: white;
+}
+.search-categories .true {
+  background-color: #ef7b00;
+  color: white;
 }
 
 .login-page {
@@ -183,7 +504,7 @@ main {
 }
 .main-page {
   display: grid;
-  grid-template-columns: 1fr max-content;
+  grid-template-columns: 1fr 30ch;
 }
 .main-page aside {
   background-color: #373b42;
@@ -198,19 +519,70 @@ main {
   position: sticky;
   top: 9rem;
 }
-.main-page aside ul li {
+.main-page aside ul .item {
   cursor: pointer;
   display: flex;
-  width: 20ch;
   align-items: center;
   justify-content: end;
   padding: 1em 2em;
   gap: 0.5rem;
   transition: all 1s ease;
 }
-.main-page aside ul li:hover {
+.main-page aside ul .item:hover {
   background-color: white;
   color: #373b42;
+}
+.main-page aside ul .nested-item {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.main-page aside ul .nested-item .item-header {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 0.5rem;
+  padding: 1em 2em;
+}
+.main-page aside ul .nested-item .item-header:hover {
+  background-color: white;
+  color: #373b42;
+}
+.main-page aside ul .nested-item .item-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: all 1s ease;
+}
+.main-page aside ul .nested-item .item-body .childs {
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  overflow: hidden;
+}
+.main-page aside ul .nested-item .item-body .childs .child {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 1em;
+  gap: 0.5rem;
+  transition: all 1s ease;
+  font-size: 0.9rem;
+  border-radius: 0 100rem 100rem 0;
+}
+.main-page aside ul .nested-item .item-body .childs .child:hover {
+  background-color: white;
+  color: #373b42;
+}
+.main-page aside ul .nested-item .item-body .childs .child::after {
+  content: "-/";
+}
+.main-page aside ul .nested-item .expand {
+  grid-template-rows: 1fr;
+  border-bottom: 3px solid white;
+  padding-bottom: 0.5em;
 }
 .main-page aside ul .true {
   background-color: white;
@@ -505,14 +877,14 @@ main {
   border-radius: 0.25rem;
   cursor: pointer;
 }
-.main-page .item {
-  box-shadow: 0.3rem 0.3rem 0.5rem 0rem rgba(0, 0, 0, 0.1);
-}
 .main-page .contacts-tab {
   padding: 2em;
   display: flex;
   flex-direction: column;
   align-items: end;
+}
+.main-page .contacts-tab .item {
+  box-shadow: 0.3rem 0.3rem 0.5rem 0rem rgba(0, 0, 0, 0.1);
 }
 .main-page .contacts-tab .search-box {
   background-color: white;
@@ -560,114 +932,151 @@ main {
   gap: 1rem;
   margin-top: 2rem;
 }
-.main-page .contacts-tab .search-results .item {
-  border-radius: 0.5rem;
-  overflow: hidden;
-  background-color: white;
-}
-.main-page .contacts-tab .search-results .item .item-header {
-  position: relative;
-}
-.main-page .contacts-tab .search-results .item .item-header img {
-  width: 100%;
-  aspect-ratio: 16/12;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.main-page .contacts-tab .search-results .item .item-header .name {
-  position: absolute;
-  bottom: 0;
-  background-color: white;
-  color: #373b42;
-  padding: 0.5em 1em;
-  right: 0;
-  border-radius: 0.75rem 0 0 0;
-  font-weight: bold;
-  font-size: 0.9rem;
-}
-.main-page .contacts-tab .search-results .item .item-body {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  text-align: right;
-  padding: 1.25em 1em;
-  gap: 0.5rem;
-}
-.main-page .contacts-tab .search-results .item .item-body .property {
-  display: grid;
-  grid-template-columns: 1fr max-content;
-  gap: 0.5rem;
-  font-size: 0.8rem;
-  align-items: center;
-}
-.main-page .contacts-tab .search-results .item .item-body .property svg {
-  font-size: 1rem;
-}
-.main-page .contacts-tab .search-results .item .item-body .property p {
-  direction: rtl;
-}
-.main-page .contacts-tab .search-results .item .item-body .id span {
-  direction: ltr;
-}
-.main-page .contacts-tab .search-results .item .item-body .bio {
-  font-size: 0.75rem;
-  line-height: 1.5;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  opacity: 0.8;
-}
-.main-page .contacts-tab .search-results .item .item-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  border-bottom: 4px solid #373b42;
-  padding: 0 1em;
-  padding-bottom: 1em;
-  gap: 0.5rem;
-}
-.main-page .contacts-tab .search-results .item .item-buttons button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-.main-page .contacts-tab .search-results .item .item-buttons button svg {
-  font-size: 1.25rem;
-}
-.main-page .contacts-tab .search-results .item .item-buttons .success {
-  background-color: #4caf50;
-  color: white;
-  padding: 0.6em 1em;
-  padding-bottom: 0.4em;
-  border-radius: 100rem;
-}
-.main-page .contacts-tab .search-results .item .item-buttons .success svg {
-  font-size: 0.9rem;
-}
-.main-page .channels-tab {
+.main-page .channels-tab,
+.main-page .groups-tab {
   padding: 2em;
   display: flex;
   flex-direction: column;
   align-items: end;
 }
-.main-page .channels-tab .search-box {
+.main-page .channels-tab .item,
+.main-page .groups-tab .item {
+  box-shadow: 0.3rem 0.3rem 0.5rem 0rem rgba(0, 0, 0, 0.1);
+}
+.main-page .channels-tab .search-results,
+.main-page .groups-tab .search-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  width: 100%;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.main-page .notifications-tab {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.main-page .notifications-tab .search-filter {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.main-page .notifications-tab .search-filter .filter-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  direction: rtl;
+  padding: 0.5em;
+  gap: 1rem;
+}
+.main-page .notifications-tab .search-filter .filter-group span {
+  width: 10ch;
+}
+.main-page .notifications-tab .search-filter .filter-group input,
+.main-page .notifications-tab .search-filter .filter-group select {
+  border: none;
   background-color: white;
+  width: auto;
+  padding: 0em 1em;
+  height: 1.75rem;
+  border-radius: 0.25rem;
+}
+.main-page .notifications-tab .search-filter .filter-group .left {
+  display: flex;
+  align-items: center;
+}
+.main-page .notifications-tab .search-filter .filter-group .right {
+  display: flex;
+  align-items: center;
+}
+.main-page .notifications-tab .search-filter .filter-submit {
+  align-self: flex-end;
+  margin-top: 1rem;
+}
+.main-page .notifications-tab .search-filter .filter-submit button {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.75em 4em;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.main-page .notifications-tab .search-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  align-items: start;
+}
+.main-page .notifications-tab .search-results .item {
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: white;
+  font-size: 0.9rem;
+  border-bottom: 4px solid #373b42;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1.5em;
+}
+.main-page .notifications-tab .search-results .item .item-body {
+  padding: 1em;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+}
+.main-page .notifications-tab .search-results .item .item-body .name {
+  font-size: 1.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-weight: bold;
+  padding-top: 0.1em;
+}
+.main-page .notifications-tab .search-results .item .item-body .status, .main-page .notifications-tab .search-results .item .item-body .id, .main-page .notifications-tab .search-results .item .item-body .type {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  margin-top: 0.75rem;
+}
+.main-page .notifications-tab .search-results .item .item-body .status span, .main-page .notifications-tab .search-results .item .item-body .id span, .main-page .notifications-tab .search-results .item .item-body .type span {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5em 1em;
+  gap: 0.25rem;
+}
+.main-page .notifications-tab .search-results .item .item-body .description {
+  display: flex;
+  align-items: center;
   gap: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  line-height: 1.75;
+  opacity: 0.75;
+}
+.main-page .notifications-tab .search-results .item .item-body .description svg {
+  font-size: 1rem;
+}
+.main-page .notifications-tab .search-results .item .item-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+.main-page .notifications-tab .search-results .item .item-buttons .submit {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 0.25rem;
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5em 2em;
+  font-size: 1rem;
   border-radius: 100rem;
 }
-.main-page .channels-tab .search-box input {
-  all: unset;
-}
-.main-page .channels-tab .search-categories {
+.main-page .create-notification-tab .categories {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
@@ -675,7 +1084,7 @@ main {
   gap: 0.5rem;
   margin-top: 2rem;
 }
-.main-page .channels-tab .search-categories .item {
+.main-page .create-notification-tab .categories .item {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -687,113 +1096,40 @@ main {
   transition: all 1s ease;
   cursor: pointer;
 }
-.main-page .channels-tab .search-categories .item:hover {
+.main-page .create-notification-tab .categories .item:hover {
   background-color: #ef7b00;
   color: white;
 }
-.main-page .channels-tab .search-categories .true {
+.main-page .create-notification-tab .categories .true {
   background-color: #ef7b00;
   color: white;
 }
-.main-page .channels-tab .search-results {
+.main-page .create-notification-tab .results .true {
+  background-color: #4caf50;
+  color: white;
+}
+.main-page .create-notification-tab .results .true .item-buttons {
+  opacity: 0;
+}
+.main-page .create-notification-tab .results .contacts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.main-page .create-notification-tab .results .groups {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   width: 100%;
   gap: 1rem;
   margin-top: 2rem;
 }
-.main-page .channels-tab .search-results .item {
-  background-color: white;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  transition: all 1s ease;
-  position: relative;
-}
-.main-page .channels-tab .search-results .item .item-header {
-  display: flex;
-  width: 100%;
-}
-.main-page .channels-tab .search-results .item .item-header img {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.main-page .channels-tab .search-results .item .item-body {
-  direction: rtl;
+.main-page .files-tab {
   padding: 2em;
-  text-align: right;
+  padding-top: 0;
   display: flex;
   flex-direction: column;
-  align-items: start;
-  justify-content: center;
-}
-.main-page .channels-tab .search-results .item .item-body .row {
-  font-size: 0.9rem;
-}
-.main-page .channels-tab .search-results .item .item-body .name {
-  font-size: 1.2rem;
-  font-weight: bold;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-height: 1.5;
-  display: -webkit-box;
-  -webkit-line-clamp: 1; /* number of lines to show */
-  -webkit-box-orient: vertical;
-}
-.main-page .channels-tab .search-results .item .item-body .link {
-  direction: ltr;
-  margin-top: 0.25rem;
-}
-.main-page .channels-tab .search-results .item .item-body .members-count {
-  margin-top: 0.5rem;
-}
-.main-page .channels-tab .search-results .item .item-body .bio {
-  margin-top: 0.5rem;
-  font-size: 0.7rem;
-  line-height: 1.5;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-height: 1.5;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
-  -webkit-box-orient: vertical;
-}
-.main-page .channels-tab .search-results .item .item-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-  bottom: 0;
-  transition: all 1s ease;
-  margin-top: 1rem;
-}
-.main-page .channels-tab .search-results .item .item-buttons button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-  font-size: 0.7rem;
-  cursor: pointer;
-}
-.main-page .channels-tab .search-results .item .item-buttons button svg {
-  font-size: 1.2rem;
-}
-.main-page .channels-tab .search-results .item .item-buttons .success {
-  background-color: #4caf50;
-  color: white;
-  padding: 0.5em 1.25em;
-  padding-bottom: 0.4em;
-  border-radius: 100rem;
-}
-.main-page .channels-tab .search-results .item .item-buttons .share,
-.main-page .channels-tab .search-results .item .item-buttons .like {
-  background-color: white;
-  padding: 0.5em;
-  border-radius: 50%;
-}
-.main-page .channels-tab .search-results .item:hover {
-  grid-template-columns: 3fr 1fr;
+  align-items: end;
 }
 
 .fade-out {

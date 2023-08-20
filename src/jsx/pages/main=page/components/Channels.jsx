@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react"
 import { useState } from "react";
+import Channel from "../../componetns/Channel";
 
 const Channels = () => {
 
@@ -109,41 +110,13 @@ const Channels = () => {
 
             <div className="search-results">
                 {fakeChannels.map((item, index) => {
-                    return <div
-                        className="item"
-                        key={index}>
-                        <div className="item-body">
-                            <div className="name row">
-                                {item.name}
-                            </div>
-                            <div className="link row">
-                                {item.link}
-                            </div>
-                            <div className="members-count row">
-                                {item.membersCount}
-                            </div>
-                            <div className="bio row">
-                                {item.description}
-                            </div>
-                            <div className="item-buttons">
-                                <button className="success">
-                                    <span>مشاهده</span>
-                                    <Icon icon="carbon:view-filled" />
-                                </button>
-                                <button className="share">
-                                    <Icon icon="ic:sharp-share" />
-                                </button>
-                                <button className="like">
-                                    <Icon icon="icon-park-outline:like" />
-                                </button>
-
-                            </div>
-                        </div>
-                        <div className="item-header">
-                            <img src={item.image} />
-
-                        </div>
-                    </div>
+                    return <Channel
+                        item={item}
+                        key={index}
+                        submit={{
+                            title: "مشاهده",
+                            submitFunction: () => { alert("Clicked") }
+                        }} />
                 })}
             </div>
         </div>
