@@ -8,7 +8,8 @@ import Notification from "../pages/main=page/components/Notification"
 import CreateNotification from "../pages/main=page/components/CreateNotification"
 import NormalItem from "./components/NormalItem"
 import NestedItem from "./components/NestedItem"
-import Files from "../pages/main=page/components/Files"
+import Files from "../pages/main=page/components/files/Files"
+import Favorites from "../pages/main=page/components/favorites/Favorites"
 
 const SideBar = ({ setContent }) => {
 
@@ -60,13 +61,14 @@ const SideBar = ({ setContent }) => {
         {
             svg: <Icon icon="ph:files-fill" />,
             title: "فایل ها",
-            type: "normal" , 
-            component : <Files/>
+            type: "normal",
+            component: <Files />
         },
         {
-            svg: <Icon icon="bxs:download" />,
-            title: "دانلود ها",
-            type: "normal"
+            svg: <Icon icon="ic:round-favorite" />,
+            title: "علاقه مندی ها",
+            type: "normal",
+            component : <Favorites/>
         },
         {
             svg: <Icon icon="fluent:settings-20-filled" />,
