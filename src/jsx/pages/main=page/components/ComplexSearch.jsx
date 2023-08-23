@@ -6,6 +6,10 @@ import React, { useState } from 'react'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { FAKE_CONTACS } from '../../consts/consts';
+import User from '../../componetns/User';
+import Group from '../../componetns/Group';
+import Channel from '../../componetns/Channel';
 
 
 
@@ -23,29 +27,7 @@ const ComplexSearch = () => {
     ]
 
 
-    const fakeContacts = [
-        {
-            name: "سارا احمدی",
-            id: "@sara_ahmadi",
-            image: require("../../../../images/complex-search/users/1.avif")
-        },
-        {
-            name: "علی محمدی",
-            id: "@ali_mohammadi",
-            image: require("../../../../images/complex-search/users/2.jpg")
-        },
-        {
-            name: "رامین رضایی",
-            id: "@ramin_rezayi",
-            image: require("../../../../images/complex-search/users/3.jpg")
-        },
-        ,
-        {
-            name: "رامین رضایی",
-            id: "@ramin_rezayi",
-            image: require("../../../../images/complex-search/users/3.jpg")
-        },
-    ]
+    const fakeContacts = FAKE_CONTACS
 
 
 
@@ -119,6 +101,12 @@ const ComplexSearch = () => {
     const [selectedCategory, setSelectedCategory] = useState(categoriesList[0])
 
 
+    const maxContacts = 4.2
+    const maxGroups = 2
+    const maxChannels = 2.2
+    const maxHashtags = 6
+
+
 
     return (
         <div className='complex-search-tab'>
@@ -181,9 +169,8 @@ const ComplexSearch = () => {
                     <Swiper
                         modules={[Navigation, Pagination]}
                         dir="rtl"
-
-                        spaceBetween={50}
-                        slidesPerView={3}
+                        spaceBetween={10}
+                        slidesPerView={maxContacts}
                         navigation={
                             {
                                 prevEl: ".swiper-left-arrow",
@@ -201,15 +188,15 @@ const ComplexSearch = () => {
 
                     >
                         {fakeContacts.map((item, index) => {
-                            return <SwiperSlide className='item'>
-                                <div className="item-header">
-                                    <img src={item.image} />
-                                </div>
-                                <div className="item-body">
-                                    <div className="name">{item.name}</div>
-                                    <div className="id">{item.id}</div>
-                                    <button className='view-info'>مشاهده اطلاعات</button>
-                                </div>
+                            return <SwiperSlide
+                                className='item' key={index}>
+                                <User
+                                    item={item}
+                                    submit={{
+                                        title: "مشاهده",
+                                        submitFunction: () => { }
+                                    }}
+                                />
                             </SwiperSlide>
                         })}
 
@@ -237,8 +224,8 @@ const ComplexSearch = () => {
                         modules={[Navigation, Pagination]}
                         dir="rtl"
 
-                        spaceBetween={50}
-                        slidesPerView={2.5}
+                        spaceBetween={20}
+                        slidesPerView={maxChannels}
                         navigation={
                             {
                                 prevEl: ".swiper-left-arrow",
@@ -257,18 +244,14 @@ const ComplexSearch = () => {
                     >
                         {groupsResults.map((item, index) => {
                             return <SwiperSlide className='item'>
-                                <div className="item-header">
-                                    <img src={item.image} />
-                                </div>
-                                <div className="item-body">
-                                    <div className="name">{item.name}</div>
-                                    <div className="id">{item.link}</div>
-                                    <p className='bio'>
-                                        {item.bio}
-                                    </p>
-                                    <button className='view-info'>مشاهده اطلاعات</button>
-
-                                </div>
+                                <Group
+                                    key={index}
+                                    item={item}
+                                    submit={{
+                                        title: "مشاهده",
+                                        submitFunction: () => { }
+                                    }}
+                                />
                             </SwiperSlide>
                         })}
 
@@ -293,8 +276,8 @@ const ComplexSearch = () => {
                     <Swiper
                         modules={[Navigation, Pagination]}
                         dir="rtl"
-                        spaceBetween={50}
-                        slidesPerView={2.5}
+                        spaceBetween={20}
+                        slidesPerView={maxChannels}
                         navigation={
                             {
                                 prevEl: ".swiper-left-arrow",
@@ -314,22 +297,13 @@ const ComplexSearch = () => {
                         {fakeChannels.map((item, index) => {
                             return <SwiperSlide
                                 className='item'>
-                                <div className="item-header">
-                                    <img src={item.image} />
-                                </div>
-                                <div className="item-body">
-                                    <div className="name">{item.name}</div>
-                                    <small className="members">
-                                        <span>اعضا :</span>
-                                        <span>{item.membersCount}</span>
-                                    </small>
-                                    <div className="id">{item.link}</div>
-                                    <p className='bio'>
-                                        {item.description}
-                                    </p>
-                                    <button className='view-info'>مشاهده اطلاعات</button>
-
-                                </div>
+                                <Channel
+                                    item={item}
+                                    key={index}
+                                    submit={{
+                                        title: "مشاهده",
+                                        submitFunction: () => { }
+                                    }} />
                             </SwiperSlide>
                         })}
 
@@ -354,8 +328,8 @@ const ComplexSearch = () => {
                         modules={[Navigation, Pagination]}
                         dir="rtl"
 
-                        spaceBetween={20}
-                        slidesPerView={6}
+                        spaceBetween={10}
+                        slidesPerView={maxHashtags}
                         navigation={
                             {
                                 prevEl: ".swiper-left-arrow",
@@ -374,6 +348,7 @@ const ComplexSearch = () => {
                     >
                         {fakeHashtags.map((item, index) => {
                             return <SwiperSlide
+                                key={index}
                                 className='item'>
                                 {item}
                             </SwiperSlide>
