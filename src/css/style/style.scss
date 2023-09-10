@@ -18,13 +18,14 @@ $primary-color-5: #009da4;
     position: relative;
     background-color: $primary-color-1;
     user-select: none;
+    --primary : #373b42 ;
 }
 
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: $primary-color-2;
+    background-color: var(--primary);
     padding: 1em 2em;
     align-items: center;
     // border-radius: 0 0 3rem 3rem;
@@ -540,7 +541,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 30ch;
     aside {
-        background-color: $primary-color-2;
+        background-color: var(--primary);
         padding: 2em 0;
         color: white;
         top: 2rem;
@@ -764,13 +765,10 @@ main {
             }
         }
         .contacts {
-           
         }
         .groups {
-           
         }
         .channels {
-          
         }
         .hash-tag {
             .item {
@@ -1606,12 +1604,96 @@ main {
                 margin-top: 2rem;
                 width: 100%;
             }
-            .channels,.groups {
+            .channels,
+            .groups {
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
                 width: 100%;
                 gap: 1rem;
                 margin-top: 2rem;
+            }
+        }
+    }
+
+    .user-detail-tab {
+        max-width: 600px;
+        margin-left: auto;
+        padding: 2em;
+        .form-body {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            .form-group {
+                display: flex;
+                align-items: end;
+                flex-direction: column;
+                justify-content: end;
+                gap: 0.5rem;
+                label {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.5rem;
+                }
+
+                input {
+                    all: unset;
+                    background-color: white;
+                    border-radius: 0.25rem;
+                    padding: 0.25em 1em;
+                }
+            }
+            .form-image {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: end;
+                justify-content: end;
+                gap: 2rem;
+                img {
+                    width: 10rem;
+                    aspect-ratio: 1/1;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+            }
+        }
+        .form-buttons {
+            .submit {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                background-color: $success;
+                color: white;
+                padding: 0.75em 1em;
+                border-radius: 100rem;
+            }
+        }
+    }
+
+    .setting-tab {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        padding: 2em;
+        .group {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            gap: 0.5rem;
+            .header {
+                display: flex;
+                align-items: center;
+                font-size: 0.9rem;
+                gap: 0.5rem;
+                svg {
+                    font-size: 1.5rem;
+                }
+
+            }
+            .body {
             }
         }
     }

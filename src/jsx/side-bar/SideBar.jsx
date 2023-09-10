@@ -10,6 +10,8 @@ import NormalItem from "./components/NormalItem"
 import NestedItem from "./components/NestedItem"
 import Files from "../pages/main=page/components/files/Files"
 import Favorites from "../pages/main=page/components/favorites/Favorites"
+import UserDetailSetting from "../pages/main=page/components/settings/UserDetailSetting"
+import DashboardSetting from "../pages/main=page/components/settings/DashboardSetting"
 
 const SideBar = ({ setContent }) => {
 
@@ -68,18 +70,25 @@ const SideBar = ({ setContent }) => {
             svg: <Icon icon="ic:round-favorite" />,
             title: "علاقه مندی ها",
             type: "normal",
-            component : <Favorites/>
+            component: <Favorites />
         },
         {
             svg: <Icon icon="fluent:settings-20-filled" />,
             title: "تنظیمات",
-            type: "normal"
-        },
-        {
-            svg: <Icon icon="mdi:account-cog" />,
-            title: "اطلاعات کاربری",
-            type: "normal"
-        },
+            type: "nested",
+            childs: [
+                {
+                    svg: <Icon icon="solar:user-bold" />,
+                    title: "اطلاعات کاربری",
+                    component: <UserDetailSetting />
+                },
+                {
+                    svg: <Icon icon="bxs:dashboard" />,
+                    title: "تنظیمات داشبورد",
+                    component: <DashboardSetting />
+                }
+            ]
+        }
 
     ]
 

@@ -7,6 +7,7 @@ const MainPage = () => {
 
     const [content, setContent] = useState()
 
+
     return (
         <main className='main-page'>
             <section className="content">
